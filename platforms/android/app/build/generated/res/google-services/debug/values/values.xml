@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">770178372782-a5tedc6938pe05isdhvlgdvea8jrgi9d.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://rif-shopee.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">770178372782</string>
+    <string name="google_api_key" translatable="false">AIzaSyD0q7TO3Gv3onKnf-57bRWH54YY4qxvyFQ</string>
+    <string name="google_app_id" translatable="false">1:770178372782:android:9c974e58f22aa611</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyD0q7TO3Gv3onKnf-57bRWH54YY4qxvyFQ</string>
+    <string name="google_storage_bucket" translatable="false">rif-shopee.appspot.com</string>
+    <string name="project_id" translatable="false">rif-shopee</string>
+</resources>

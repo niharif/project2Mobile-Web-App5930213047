@@ -1,0 +1,213 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="cordova.js"></script>
+    <title>Scanner</title>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            // Start a scan. Scanning will continue until something is detected or
+            // `QRScanner.cancelScan()` is called.
+            QRScanner.scan(displayContents);
+
+            function displayContents(err, text) {
+                if (err) {
+                    // an error occurred, or the scan was canceled (error code `6`)
+                } else {
+                    // The scan completed, display the contents of the QR code:
+                    localStorage.setItem("code", text);
+                    QRScanner.hide();
+                    window.location.href = 'index.html';
+                }
+            }
+
+            // Make the webview transparent so the video preview is visible behind it.
+            QRScanner.show();
+            // Be sure to make any opaque HTML elements transparent here to avoid
+            // covering the video.
+        }
+
+    </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="cordova.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <title>Scan QR Code</title>
+</head>
+
+<body>
+
+    <div class="content" style="text-align: center">
+    <div style="position: relative;display: inline-block; margin-top:50%; margin-left:6%;margin-right:6%;">
+        <canvas id="qr-canvas" width="320%" height="240%"></canvas>
+        <div>
+                <ons-row class="category">
+                  <ons-col modifier="nodivider" id="Category_1" onclick="openPlaylist(this.id)">
+                    <div class="category_wrapper">
+                      <figure class="category_thumbnail">
+                        <div class="scanner-laser laser-rightBottom" style="opacity: 0.5;"></div>
+                      </figure>
+                    </div>
+                  </ons-col>
+                  <ons-col modifier="nodivider" id="Category_2" onclick="openPlaylist(this.id)">
+                    <div class="category_wrapper">
+                      <figure class="category_thumbnail">
+                        <div class="scanner-laser laser-rightTop" style="opacity: 0.5;"></div>
+                      </figure>
+                    </div>
+                  </ons-col>
+                </ons-row>
+                <ons-row class="category">  
+                  <ons-col modifier="nodivider" id="Category_3" onclick="openPlaylist(this.id)">
+                    <div class="category_wrapper">
+                      <figure class="category_thumbnail">
+                        <div class="scanner-laser laser-leftBottom" style="opacity: 0.5;"></div>
+                      </figure>
+                    </div>
+                  </ons-col>
+                  <ons-col modifier="nodivider" id="Category_4" onclick="openPlaylist(this.id)">
+                    <div class="category_wrapper">
+                      <figure class="category_thumbnail">
+                        <div class="scanner-laser laser-leftTop" style="opacity: 0.5;"></div>
+                      </figure>
+                    </div>
+                  </ons-col>
+                </ons-row>
+              </div>
+    </div>
+</div>
+<ons-toolbar>
+    <div  class="left"><ons-back-button onclick="window.location.href='home.html'">Back</ons-back-button></div>
+    <div class="center">Back to home</div>
+</ons-toolbar>
+
+    <div class="center">
+        <center>
+            <ons-icon id="barup" class="toolbaricon" size="80px" icon="fa-bolt" onclick="lighning()" ></ons-icon>
+        </center>
+    </div>
+
+    <style type="text/css">
+        #barup {
+    
+            margin-top: 25%
+        }
+
+        .toolbaricon {
+            padding-left: 5px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            color: rgb(102, 184, 231);
+
+        }
+
+        .scanner-laser {
+            position: absolute;
+            margin: auto;
+            height: 50px;
+            width: 50px;
+        }
+
+        .laser-leftTop {
+            top: 0;
+            left: 0;
+            border-top: solid rgb(240, 243, 247) 5px;
+            border-left: solid rgb(240, 243, 247) 5px;
+        }
+
+        .laser-leftBottom {
+            bottom: 0;
+            left: 0;
+            border-bottom: solid rgb(237, 240, 245) 5px;
+            border-left: solid rgb(240, 243, 247) 5px;
+        }
+
+        .laser-rightTop {
+            top: 0;
+            right: 0;
+            border-top: solid rgb(240, 243, 247) 5px;
+            border-right: solid rgb(240, 243, 247) 5px;
+        }
+
+        .laser-rightBottom {
+            bottom: 0;
+            right: 0;
+            border-bottom: solid rgb(240, 243, 247) 5px;
+            border-right: solid rgb(240, 243, 247) 5px;
+        }
+    </style>
+    <script>
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+
+            QRScanner.scan(displayContents);
+           
+
+            function displayContents(err, text) {
+                if (err) {
+                    // an error occurred, or the scan was canceled (error code 6)
+                } else {
+                    // The scan completed, display the contents of the QR code:
+                    localStorage.setItem("code", text);
+                    QRScanner.disableLight(function (err, status) {
+                        err && console.error(err);
+                        console.log(status);
+                    });
+                    QRScanner.hide();
+                    window.location.href = 'index.html';
+                }
+            }
+
+            // Make the webview transparent so the video preview is visible behind it.
+            QRScanner.show();
+            // Be sure to make any opaque HTML elements transparent here to avoid
+            // covering the video.
+        }
+
+        var click = 0;
+        function lighning() {
+            if (click == 0) {
+                lighopen()
+                click = 1
+            } else {
+                lighclose()
+                click = 0
+            }
+
+        }
+        function lighopen() {
+            QRScanner.enableLight(function (err, status) {
+                err && console.error(err);
+                console.log("openligh");
+            });
+        }
+        function lighclose() {
+            QRScanner.disableLight(function (err, status) {
+                err && console.error(err);
+                console.log("colseligh");
+            });
+        }
+
+    </script>
+</body>
+
+</html>

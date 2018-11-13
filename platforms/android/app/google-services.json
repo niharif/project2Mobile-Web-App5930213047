@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "770178372782",
+    "firebase_url": "https://rif-shopee.firebaseio.com",
+    "project_id": "rif-shopee",
+    "storage_bucket": "rif-shopee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:770178372782:android:9c974e58f22aa611",
+        "android_client_info": {
+          "package_name": "com.example.hello"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "770178372782-a5tedc6938pe05isdhvlgdvea8jrgi9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0q7TO3Gv3onKnf-57bRWH54YY4qxvyFQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

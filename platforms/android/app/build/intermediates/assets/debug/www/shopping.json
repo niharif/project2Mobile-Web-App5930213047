@@ -1,0 +1,13 @@
+{
+    "shopping" : [
+        { "category" : "beauty","itemname" : "Cream Ponds set", "price" : 12650.00 , "photo" : "item1.jpg"},
+        { "category" : "beauty","itemname" : "Facial care", "price" : 1570.00 , "photo" : "item2.jpg"},
+        { "category" : "beauty","itemname" : "Milk soap", "price" : 2990.00 , "photo" : "item3.jpg"},
+        { "category" : "beauty","itemname" : "", "price" : 12650.00 , "photo" : "item1.jpg"},
+        { "category" : "beauty","itemname" : "", "price" : 1570.00 , "photo" : "item2.jpg"},
+        { "category" : "beauty","itemname" : "", "price" : 2990.00 , "photo" : "item3.jpg"}
+    ]
+
+  
+}
+
